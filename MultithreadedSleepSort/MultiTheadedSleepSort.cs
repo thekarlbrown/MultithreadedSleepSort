@@ -48,7 +48,7 @@ namespace MultithreadedSleepSort
         }
 
         /* This process simply takes in the state info passed into the thread and
-         * waits (8 * the number being sorted) seconds, then adds the number back to
+         * waits (10 * the number being sorted) seconds, then adds the number back to
          * the List in the object reference. Thus, each ThreadPool created for the SleepSort
          * finishes sleeping in order based on how big it's number being sorted is.
          * "Experts" consider SleepSort to be a very inefficient sort, although one
@@ -61,7 +61,7 @@ namespace MultithreadedSleepSort
         static void ThreadProcess (Object stateInfo)
         {
             var sleepSortObject = (SleepSortObject)stateInfo;
-            Thread.Sleep(sleepSortObject.TimeToSort * 8000);
+            Thread.Sleep(sleepSortObject.TimeToSort * 10000);
             sleepSortObject.SortedItemsReference.Add(sleepSortObject.TimeToSort);
         }
     }
